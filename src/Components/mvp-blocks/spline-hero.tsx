@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navigation from '../layouts/navigation';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 export default function Globe3D() {
-  const router = useRouter();
   return (
     <section
       className="relative w-full overflow-hidden pt-32 pb-10 font-light text-white antialiased md:pt-20 md:pb-16"

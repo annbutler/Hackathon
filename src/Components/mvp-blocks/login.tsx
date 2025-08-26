@@ -1,32 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import {
-  Mail,
-  Lock,
-  Eye,
-  EyeOff,
-  Loader2,
-  Github,
-} from 'lucide-react';
+import Image from "next/image";
 import { signInWithGooglePopup } from "@/app/api/google/google";
 export default function SignInPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false);
 
 
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    setLoading(true);
-    // setTimeout(() => {
-    //   alert('Login successful! (This is a demo)');
-    //   setLoading(false);
-    // }, 2000);
-  };
    const handleGoogleLogin = async () => {
-       setLoading(true);
     try {
       const signedInUser = await signInWithGooglePopup();
       if (signedInUser) {
@@ -38,7 +17,6 @@ export default function SignInPage() {
       alert("error");
       alert("Google login failed");
     } finally {
-      setLoading(false);
     }
   };
   return (
@@ -53,7 +31,7 @@ export default function SignInPage() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form className="space-y-6">
         
 
           <div>
@@ -62,7 +40,7 @@ export default function SignInPage() {
               type="button"
               className="flex items-center w-full justify-center rounded-lg border border-[#A0AEC0]/30 bg-[#0D1117] px-4 py-2.5 text-sm text-[#FFFFFF] transition-colors hover:border-[#A0AEC0]"
             >
-              <img
+              <Image
                 src="https://www.svgrepo.com/show/475656/google-color.svg"
                 className="h-5 w-5"
                 alt="Google"

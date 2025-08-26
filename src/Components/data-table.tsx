@@ -55,7 +55,7 @@ import { z } from "zod"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Badge } from "@/Components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/Components/ui/button"
 import {
   ChartConfig,
   ChartContainer,
@@ -81,7 +81,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/Components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+import { Input } from "@/Components/ui/input"
 import { Label } from "@/Components/ui/label"
 import {
   Select,
@@ -90,7 +90,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/Components/ui/select"
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/Components/ui/separator"
 import {
   Table,
   TableBody,

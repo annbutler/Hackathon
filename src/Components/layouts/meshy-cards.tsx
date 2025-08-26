@@ -1,11 +1,3 @@
-import {
-  Receipt,
-  FileText,
-  CreditCard,
-  Zap,
-  Shield,
-  BarChart3,
-} from 'lucide-react';
 import Image from 'next/image';
 const features = [
   {
