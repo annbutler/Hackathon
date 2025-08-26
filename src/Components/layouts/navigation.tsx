@@ -1,10 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
-
+import { useRouter } from 'next/navigation';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -28,7 +28,6 @@ const Navigation = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in-out py-4 px-6 md:px-12 ${
@@ -43,17 +42,23 @@ const Navigation = () => {
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
-          <a href="#features" className="text-white hover:text-gray-300 transition-colors">
-            Features
+          <a 
+          onClick={() => { router.push('signup');}}
+          className="text-white hover:text-gray-300 cursor-pointer transition-colors">
+            Sign up
           </a>
-          <a href="#pricing" className="text-white hover:text-gray-300 transition-colors">
-            Pricing
+          <a 
+          onClick={() => { router.push('login');}}
+           className="text-white cursor-pointer hover:text-gray-300 transition-colors">
+            Login
           </a>
-          <a href="#about" className="text-white hover:text-gray-300 transition-colors">
-            About
+          <a 
+          onClick={() => { router.push('/dashboard');}}
+          href="#about" className="text-white hover:text-gray-300 transition-colors">
+            Dashboard
           </a>
-          <a href="#contact" className="text-white hover:text-gray-300 transition-colors">
-            Contact
+          <a href="#process" className="text-white hover:text-gray-300 transition-colors">
+            Process
           </a>
         </div>
 
@@ -93,32 +98,31 @@ const Navigation = () => {
       >
         <div className="flex flex-col space-y-4 p-6">
           <a
-            href="#features"
-            onClick={closeMenu}
+            
+            onClick={() => { router.push('signup'); closeMenu();}}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
-            Features
+            Signup
           </a>
           <a
-            href="#pricing"
-            onClick={closeMenu}
+            onClick={() => { router.push('login'); closeMenu();}}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
-            Pricing
+            Login
           </a>
           <a
             href="#about"
-            onClick={closeMenu}
+            onClick={ ()=>{router.push('/dashboard'); closeMenu();}}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
-            About
+            Dashboard
           </a>
           <a
-            href="#contact"
+            href="#process"
             onClick={closeMenu}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
-            Contact
+            Process
           </a>
         </div>
       </div>
