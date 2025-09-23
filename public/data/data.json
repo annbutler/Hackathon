@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+        "info":"//This is mock data. Add more data as needed for testing.",
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com"
+    }
+  ],
+  "posts": [
+    {
+      "id": 101,
+      "title": "Sample Post",
+      "content": "This is example content."
+    }
+  ]
+}

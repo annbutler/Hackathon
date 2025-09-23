@@ -54,11 +54,16 @@ const Navigation = () => {
           </a>
           <a 
           onClick={() => { router.push('/dashboard');}}
-          href="#about" className="text-white hover:text-gray-300 transition-colors">
+           className="text-white cursor-pointer hover:text-gray-300 transition-colors">
             Dashboard
           </a>
           <a href="#process" className="text-white hover:text-gray-300 transition-colors">
             Process
+          </a>
+                <a 
+                onClick={() => { router.push('/AImodel');}}
+                  className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
+            AI
           </a>
         </div>
 
