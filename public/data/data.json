@@ -1,17 +1,106 @@
-{
-  "users": [
-    {
-        "info":"//This is mock data. Add more data as needed for testing.",
-      "id": 1,
-      "name": "Alice Johnson",
-      "email": "alice@example.com"
-    }
-  ],
-  "posts": [
-    {
-      "id": 101,
-      "title": "Sample Post",
-      "content": "This is example content."
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "header": "Black Excellence in Tech",
+    "type": "Community Impact",
+    "status": "Active",
+    "target": "10,000",
+    "limit": "15,000",
+    "reviewer": "Dr. Mark Dean",
+    "description": "Supporting Black technologists in building the future of innovation",
+    "progress": 85,
+    "category": "Education",
+    "priority": "High"
+  },
+  {
+    "id": 2,
+    "header": "African Innovation Hub",
+    "type": "Startup Incubation",
+    "status": "In Progress",
+    "target": "50",
+    "limit": "100",
+    "reviewer": "Madam C.J. Walker",
+    "description": "Fostering entrepreneurship and technological advancements across Africa",
+    "progress": 60,
+    "category": "Entrepreneurship",
+    "priority": "High"
+  },
+  {
+    "id": 3,
+    "header": "Diaspora Digital Skills",
+    "type": "Skill Development",
+    "status": "Planning",
+    "target": "5,000",
+    "limit": "7,000",
+    "reviewer": "Katherine Johnson",
+    "description": "Empowering the diaspora with essential digital skills for the modern workforce",
+    "progress": 30,
+    "category": "Education",
+    "priority": "Medium"
+  },
+  {
+    "id": 4,
+    "header": "Heritage Preservation AI",
+    "type": "Cultural Preservation",
+    "status": "Active",
+    "target": "1,000",
+    "limit": "1,200",
+    "reviewer": "George Washington Carver",
+    "description": "Using AI to digitize and preserve Black and African cultural heritage",
+    "progress": 92,
+    "category": "Culture",
+    "priority": "High"
+  },
+  {
+    "id": 5,
+    "header": "Youth Tech Mentorship",
+    "type": "Mentorship Program",
+    "status": "Completed",
+    "target": "2,000",
+    "limit": "2,000",
+    "reviewer": "Mae C. Jemison",
+    "description": "Guiding young Black and African aspiring technologists through mentorship",
+    "progress": 100,
+    "category": "Mentorship",
+    "priority": "Low"
+  },
+  {
+    "id": 6,
+    "header": "Chicago Tech Renaissance",
+    "type": "Urban Development",
+    "status": "Active",
+    "target": "3,500",
+    "limit": "4,000",
+    "reviewer": "Dr. Percy Julian",
+    "description": "Building a thriving tech ecosystem in Chicago's South Side communities",
+    "progress": 78,
+    "category": "Community Development",
+    "priority": "High"
+  },
+  {
+    "id": 7,
+    "header": "Digital Literacy Initiative",
+    "type": "Education Program",
+    "status": "In Progress",
+    "target": "15,000",
+    "limit": "20,000",
+    "reviewer": "Dr. Shirley Ann Jackson",
+    "description": "Providing comprehensive digital literacy training across underserved communities",
+    "progress": 65,
+    "category": "Education",
+    "priority": "Medium"
+  },
+  {
+    "id": 8,
+    "header": "AfroTech Accelerator",
+    "type": "Startup Accelerator",
+    "status": "Planning",
+    "target": "25",
+    "limit": "30",
+    "reviewer": "Robert L. Johnson",
+    "description": "Accelerating Black-owned tech startups with funding and mentorship",
+    "progress": 45,
+    "category": "Entrepreneurship",
+    "priority": "High"
+  }
+]
