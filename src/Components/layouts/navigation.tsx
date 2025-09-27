@@ -37,7 +37,7 @@ const Navigation = () => {
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-xl">
          <h1>
-          <a href="#"> MVP Starter Kit</a>
+          <a href="/" className="hover:text-gray-300 transition-colors"> MVP Starter Kit</a>
           </h1>
         </div>
         {/* Desktop Menu */}
