@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +38,7 @@ const Navigation = () => {
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-xl">
          <h1>
-          <a href="#"> MVP Starter Kit</a>
+          <Link href="/" className="hover:text-gray-300 transition-colors"> MVP Starter Kit</Link>
           </h1>
         </div>
         {/* Desktop Menu */}
