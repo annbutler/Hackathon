@@ -61,10 +61,20 @@ const Navigation = () => {
           <a href="#process" className="text-white hover:text-gray-300 transition-colors">
             Process
           </a>
-                <a 
-                onClick={() => { router.push('/AImodel');}}
-                  className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
+          <a 
+          onClick={() => { router.push('/AImodel');}}
+            className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
             AI
+          </a>
+          <a 
+          onClick={() => { router.push('/quiz');}}
+            className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
+            Quiz
+          </a>
+          <a 
+          onClick={() => { router.push('/docs');}}
+            className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
+            Docs
           </a>
         </div>
 
@@ -129,6 +139,24 @@ const Navigation = () => {
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
             Process
+          </a>
+          <a
+            onClick={() => { router.push('/AImodel'); closeMenu();}}
+            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
+          >
+            AI
+          </a>
+          <a
+            onClick={() => { router.push('/quiz'); closeMenu();}}
+            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
+          >
+            Quiz
+          </a>
+          <a
+            onClick={() => { router.push('/docs'); closeMenu();}}
+            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
+          >
+            Docs
           </a>
         </div>
       </div>
