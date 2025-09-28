@@ -37,8 +37,8 @@ const Navigation = () => {
     >
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-xl">
-         <h1>
-          <Link href="/" className="hover:text-gray-300 transition-colors"> Chicago Wards</Link>
+          <h1>
+            <Link href="/" className="hover:text-gray-300 transition-colors"> PoliTalk</Link>
           </h1>
         </div>
         {/* Desktop Menu */}

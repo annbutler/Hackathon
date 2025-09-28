@@ -4,7 +4,7 @@ export interface Alderman {
   email: string;
   phone: string;
   office: string;
-  image: string;
+  image?: string;
   biography: string;
   platforms: string[];
   committees: string[];

@@ -129,13 +129,15 @@ export default function WardOverview({ ward }: WardOverviewProps) {
           <Card className="bg-gray-800 border-gray-600">
             <CardHeader>
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-shrink-0">
-                  <img 
-                    src={ward.alderman.image} 
-                    alt={`${ward.alderman.name}, Alderman of ${ward.name}`}
-                    className="w-48 h-48 rounded-lg object-cover border-2 border-gray-600"
-                  />
-                </div>
+                {ward.alderman.image && (
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={ward.alderman.image} 
+                      alt={`${ward.alderman.name}, Alderman of ${ward.name}`}
+                      className="w-48 h-48 rounded-lg object-cover border-2 border-gray-600"
+                    />
+                  </div>
+                )}
                 <div className="flex-1">
                   <CardTitle className="text-white text-2xl">{ward.alderman.name}</CardTitle>
                   <p className="text-gray-400 text-lg">{ward.alderman.party} • {ward.name}</p>

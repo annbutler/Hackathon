@@ -49,14 +49,18 @@ export default function WardSearch() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-white">
-          Find Your Chicago Ward
-        </h1>
-        <p className="text-xl text-gray-300">
-          Search for your ward, alderman, or local issues
-        </p>
-      </div>
+          <div className="text-center space-y-4">
+            <h1 className="text-4xl font-bold text-white">
+              Welcome to PoliTalk
+            </h1>
+            <p className="text-xl text-gray-300">
+              Your comprehensive ward information hub
+            </p>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              Get informed about your Chicago ward, connect with your alderman, and stay engaged with local government. 
+              Find ward information, submit requests, and discover local events happening in your community.
+            </p>
+          </div>
 
       <div className="flex gap-4">
         <Input

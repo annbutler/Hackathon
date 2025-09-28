@@ -11,8 +11,8 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "Chicago Wards - Find Your Ward & Connect with Your Alderman",
-  description: "Connect with your Chicago ward, alderman, and local community. Submit requests, view events, and stay informed about local government.",
+  title: "PoliTalk - Your Ward Information Hub",
+  description: "Get informed about your Chicago ward, connect with your alderman, and stay engaged with local government. Find ward information, submit requests, and discover local events.",
   icons: {
     icon: "/favicon.png",
   },
