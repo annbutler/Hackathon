@@ -1,8 +1,9 @@
-import HeroSection from "@/Components/Landingpagecomps/page";
+import WardSearch from "@/Components/ward/WardSearch";
+
 export default function Home() {
   return (
-  <div>
-   <HeroSection />
-  </div>
+    <div className="min-h-screen bg-[#0D1117]">
+      <WardSearch />
+    </div>
   );
 }

@@ -1,0 +1,63 @@
+---
+globs: src/Components/mvp-blocks/*,src/Components/layouts/*,src/Components/ui/*
+---
+
+# MVP Blocks Components Guide
+
+Use the pre-built MVP components located in [src/Components/mvp-blocks/](mdc:src/Components/mvp-blocks/) for rapid development.
+
+## 🎯 Available MVP Components
+
+### Authentication Components
+- [src/Components/mvp-blocks/login.tsx](mdc:src/Components/mvp-blocks/login.tsx) - Google OAuth login with dark theme
+- [src/Components/mvp-blocks/signup.tsx](mdc:src/Components/mvp-blocks/signup.tsx) - Google OAuth signup flow
+
+### Hero Section
+- [src/Components/mvp-blocks/spline-hero.tsx](mdc:src/Components/mvp-blocks/spline-hero.tsx) - Animated hero with Framer Motion
+
+### Layout Components
+- [src/Components/layouts/navigation.tsx](mdc:src/Components/layouts/navigation.tsx) - Main navigation bar
+- [src/Components/layouts/footer.tsx](mdc:src/Components/layouts/footer.tsx) - Footer component
+- [src/Components/layouts/process.tsx](mdc:src/Components/layouts/process.tsx) - Process section component
+- [src/Components/layouts/meshy-cards.tsx](mdc:src/Components/layouts/meshy-cards.tsx) - Card layout component
+
+## 🛠 Usage Patterns
+
+### Import MVP Components
+```tsx
+import LoginPage from '@/Components/mvp-blocks/login';
+import SignupPage from '@/Components/mvp-blocks/signup';
+import SplineHero from '@/Components/mvp-blocks/spline-hero';
+```
+
+### Component Structure
+- All MVP components use `'use client'` directive
+- Consistent dark theme with colors: `#0D1117` (background), `#FFFFFF` (text), `#2B6CB0` (accent)
+- Responsive design with Tailwind CSS
+- Error handling with user feedback
+
+### Authentication Integration
+- Components integrate with [src/app/api/google/google.ts](mdc:src/app/api/google/google.ts)
+- Use Firebase authentication from [src/lib/firebaseClient.ts](mdc:src/lib/firebaseClient.ts)
+- Handle authentication state properly with loading states
+
+## 🎨 Styling Guidelines
+
+- Use Tailwind CSS utility classes
+- Maintain consistent spacing with `p-6`, `m-4`, etc.
+- Use CSS variables for theming: `bg-[var(--background-primary)]`
+- Implement responsive breakpoints: `md:`, `lg:`, `xl:`
+
+## 🔧 Customization
+
+- Modify component styles directly for brand customization
+- Update text content in hero components
+- Extend authentication methods by adding new providers
+- Create new MVP blocks following the same patterns
+
+## 📚 Dependencies
+
+- Firebase for authentication
+- Framer Motion for animations
+- Lucide React for icons
+- Tailwind CSS for styling

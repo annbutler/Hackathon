@@ -1,0 +1,152 @@
+---
+globs: public/data/*,src/lib/mockData.ts
+---
+
+# Mock Data Creation Guide
+
+## 📁 Mock Data Structure
+
+The main mock data file is [public/data/data.json](mdc:public/data/data.json) with the following structure:
+
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "admin",
+      "status": "active"
+    }
+  ],
+  "posts": [
+    {
+      "id": 101,
+      "title": "Sample Post",
+      "content": "This is example content."
+    }
+  ]
+}
+```
+
+## 🛠 Working with Mock Data
+
+### Loading Data in Components
+```tsx
+// Create utility functions in src/lib/mockData.ts
+export async function loadMockData() {
+  const response = await fetch('/data/data.json');
+  return response.json();
+}
+
+export async function getUsers() {
+  const data = await loadMockData();
+  return data.users;
+}
+```
+
+### Using in React Components
+```tsx
+'use client';
+import { useState, useEffect } from 'react';
+import { getUsers } from '@/lib/mockData';
+
+export default function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadUsers() {
+      const userData = await getUsers();
+      setUsers(userData);
+      setLoading(false);
+    }
+    loadUsers();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  
+  return (
+    <div>
+      {users.map(user => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+## 📊 Enhanced Data Structure
+
+### User Data
+```json
+{
+  "id": 1,
+  "name": "Alice Johnson",
+  "email": "alice.johnson@example.com",
+  "avatar": "/images/avatar.jpg",
+  "role": "admin",
+  "status": "active",
+  "createdAt": "2024-01-15T10:30:00Z",
+  "profile": {
+    "bio": "Full-stack developer",
+    "location": "San Francisco, CA",
+    "social": {
+      "twitter": "@alicejohnson",
+      "linkedin": "alice-johnson-dev"
+    }
+  },
+  "stats": {
+    "posts": 45,
+    "followers": 1234,
+    "following": 567
+  }
+}
+```
+
+### Post Data
+```json
+{
+  "id": 101,
+  "title": "Getting Started with Next.js 15",
+  "content": "Next.js 15 introduces exciting new features...",
+  "excerpt": "Explore the new features in Next.js 15",
+  "authorId": 1,
+  "authorName": "Alice Johnson",
+  "category": "tutorial",
+  "tags": ["nextjs", "react", "javascript"],
+  "status": "published",
+  "featured": true,
+  "createdAt": "2024-01-20T10:00:00Z",
+  "stats": {
+    "views": 1250,
+    "likes": 89,
+    "comments": 23
+  }
+}
+```
+
+## 🚀 Best Practices
+
+- **Data Organization**: Keep related data together, use consistent naming
+- **Realistic Data**: Use realistic names, emails, and content
+- **Performance**: Load data asynchronously, implement loading states
+- **Maintenance**: Document data structure, keep it updated with schema changes
+
+## 🔧 Data Generators
+
+For larger datasets, use data generators:
+```tsx
+import { faker } from '@faker-js/faker';
+
+export function generateMockUsers(count: number) {
+  return Array.from({ length: count }, (_, index) => ({
+    id: index + 1,
+    name: faker.person.fullName(),
+    email: faker.internet.email(),
+    role: faker.helpers.arrayElement(['admin', 'user', 'moderator']),
+    status: faker.helpers.arrayElement(['active', 'inactive']),
+    createdAt: faker.date.past().toISOString(),
+  }));
+}
+```

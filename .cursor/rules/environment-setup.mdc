@@ -1,0 +1,61 @@
+---
+description: Environment variables and configuration setup
+---
+
+# Environment Setup Guide
+
+## 🔑 Required Environment Variables
+
+Copy [example.env](mdc:example.env) to `.env.local` and configure these variables:
+
+### Firebase Configuration
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_SENDER_ID=your_sender_id
+NEXT_PUBLIC_APP_ID=your_app_id
+NEXT_PUBLIC_MEASUREMENT_ID=your_measurement_id
+```
+
+### Google Gemini AI
+```env
+GEMNI_API_KEY=your_gemini_api_key
+```
+
+## 🔧 Setup Process
+
+1. **Copy environment template**:
+   ```bash
+   cp example.env .env.local
+   ```
+
+2. **Firebase Setup**:
+   - Create project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Google Authentication
+   - Add web app and copy configuration values
+   - Add your domain to authorized domains
+
+3. **Google Gemini Setup**:
+   - Get API key from [Google AI Studio](https://aistudio.google.com/)
+   - Add key to `.env.local`
+
+## 🔒 Security Best Practices
+
+- **Never commit** `.env.local` to Git
+- Use different Firebase projects for dev/staging/production
+- Rotate API keys regularly
+- Monitor usage in Firebase Console and Google AI Studio
+
+## 🚨 Common Issues
+
+- **Firebase CORS errors**: Add your domain to Firebase Auth authorized domains
+- **Missing API keys**: Verify all environment variables are set correctly
+- **Authentication failures**: Check Firebase project configuration matches environment variables
+
+## 📁 Configuration Files
+
+- [src/lib/firebase.ts](mdc:src/lib/firebase.ts) - Firebase app configuration
+- [src/lib/firebaseClient.ts](mdc:src/lib/firebaseClient.ts) - Firebase client setup
+- [example.env](mdc:example.env) - Environment variables template

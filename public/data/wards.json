@@ -1,0 +1,181 @@
+{
+  "wards": [
+    {
+      "id": 1,
+      "name": "Ward 1",
+      "alderman": {
+        "name": "Daniel La Spata",
+        "party": "Democratic",
+        "email": "daniel.laspata@cityofchicago.org",
+        "phone": "(773) 227-0100",
+        "office": "1958 N Milwaukee Ave, Chicago, IL 60647",
+        "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&sat=-20&bri=10",
+        "biography": "Daniel La Spata has served as Alderman of the 1st Ward since 2019. He represents Wicker Park, Ukrainian Village, and surrounding areas. He focuses on affordable housing, transportation, and community development.",
+        "platforms": [
+          "Affordable Housing Development",
+          "Public Transportation Improvements", 
+          "Community Safety Initiatives",
+          "Environmental Sustainability"
+        ],
+        "committees": ["Housing and Real Estate", "Transportation and Public Way"]
+      },
+      "demographics": {
+        "population": 54000,
+        "area": "3.2 sq mi",
+        "medianIncome": "$65000"
+      },
+      "events": [
+        {
+          "id": 1,
+          "title": "Ward 1 Community Meeting",
+          "date": "2024-02-15T18:00:00Z",
+          "location": "Wicker Park Library",
+          "description": "Monthly community meeting to discuss local issues and upcoming projects."
+        },
+        {
+          "id": 2,
+          "title": "Affordable Housing Forum",
+          "date": "2024-02-22T19:00:00Z", 
+          "location": "Ukrainian Village Community Center",
+          "description": "Discussion on new affordable housing initiatives in the ward."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ward 2",
+      "alderman": {
+        "name": "Brian Hopkins",
+        "party": "Democratic",
+        "email": "brian.hopkins@cityofchicago.org",
+        "phone": "(312) 744-3062",
+        "office": "1400 N Ashland Ave, Chicago, IL 60622",
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&sat=-20&bri=10",
+        "biography": "Brian Hopkins has represented the 2nd Ward since 2015. He represents Lincoln Park, Old Town, and surrounding areas. He is known for his work on public safety and economic development.",
+        "platforms": [
+          "Public Safety and Policing",
+          "Economic Development",
+          "Infrastructure Improvements",
+          "Community Engagement"
+        ],
+        "committees": ["Public Safety", "Economic, Capital and Technology Development"]
+      },
+      "demographics": {
+        "population": 52000,
+        "area": "2.8 sq mi", 
+        "medianIncome": "$72000"
+      },
+      "events": [
+        {
+          "id": 3,
+          "title": "Public Safety Town Hall",
+          "date": "2024-02-18T18:30:00Z",
+          "location": "Lincoln Park Community Center",
+          "description": "Community discussion on public safety initiatives and police-community relations."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ward 3",
+      "alderman": {
+        "name": "Pat Dowell",
+        "party": "Democratic", 
+        "email": "pat.dowell@cityofchicago.org",
+        "phone": "(773) 373-9273",
+        "office": "5046 S State St, Chicago, IL 60609",
+        "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face&sat=-20&bri=10",
+        "biography": "Pat Dowell has served the 3rd Ward since 2007. She represents Bronzeville, Douglas, and surrounding areas. She focuses on economic development, education, and community revitalization.",
+        "platforms": [
+          "Economic Development",
+          "Education and Youth Programs",
+          "Community Revitalization",
+          "Small Business Support"
+        ],
+        "committees": ["Education and Child Development", "Economic, Capital and Technology Development"]
+      },
+      "demographics": {
+        "population": 48000,
+        "area": "4.1 sq mi",
+        "medianIncome": "$45000"
+      },
+      "events": [
+        {
+          "id": 4,
+          "title": "Small Business Workshop",
+          "date": "2024-02-25T10:00:00Z",
+          "location": "Bronzeville Community Center",
+          "description": "Workshop for local small business owners on city resources and permits."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ward 4",
+      "alderman": {
+        "name": "Lamont Robinson",
+        "party": "Democratic",
+        "email": "lamont.robinson@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "435 E 35th St, Chicago, IL 60616",
+        "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face&sat=-20&bri=10",
+        "biography": "Lamont Robinson has served the 4th Ward since 2019. He represents Kenwood, Hyde Park, and surrounding areas. He focuses on education, economic development, and community safety.",
+        "platforms": [
+          "Education and Youth Development",
+          "Economic Development",
+          "Public Safety",
+          "Affordable Housing"
+        ],
+        "committees": ["Education and Child Development", "Housing and Real Estate"]
+      },
+      "demographics": {
+        "population": 51000,
+        "area": "3.8 sq mi",
+        "medianIncome": "$58000"
+      },
+      "events": [
+        {
+          "id": 5,
+          "title": "Education Forum",
+          "date": "2024-02-28T18:00:00Z",
+          "location": "Hyde Park Academy",
+          "description": "Community discussion on local education initiatives and school improvements."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ward 5",
+      "alderman": {
+        "name": "Desmon Yancy",
+        "party": "Democratic",
+        "email": "desmon.yancy@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "6354 S Cottage Grove Ave, Chicago, IL 60637",
+        "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face&sat=-20&bri=10",
+        "biography": "Desmon Yancy has served the 5th Ward since 2023. He represents Woodlawn, South Shore, and surrounding areas. He focuses on community development, public safety, and economic opportunities.",
+        "platforms": [
+          "Community Development",
+          "Public Safety",
+          "Economic Opportunities",
+          "Youth Programs"
+        ],
+        "committees": ["Public Safety", "Economic, Capital and Technology Development"]
+      },
+      "demographics": {
+        "population": 47000,
+        "area": "4.2 sq mi",
+        "medianIncome": "$42000"
+      },
+      "events": [
+        {
+          "id": 6,
+          "title": "Community Development Meeting",
+          "date": "2024-03-05T19:00:00Z",
+          "location": "South Shore Cultural Center",
+          "description": "Discussion on upcoming community development projects and neighborhood improvements."
+        }
+      ]
+    }
+  ]
+}

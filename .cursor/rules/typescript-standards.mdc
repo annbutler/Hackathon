@@ -1,0 +1,263 @@
+---
+globs: *.ts,*.tsx
+---
+
+# TypeScript and Coding Standards
+
+## 🎯 TypeScript Configuration
+
+This project uses TypeScript with strict configuration from [tsconfig.json](mdc:tsconfig.json).
+
+### Key TypeScript Settings
+- **Strict mode**: Enabled for type safety
+- **Path mapping**: `@/*` maps to `./src/*`
+- **ESNext modules**: Modern JavaScript features
+- **JSX preserve**: React JSX support
+
+## 📝 Coding Standards
+
+### File Naming Conventions
+- **Components**: PascalCase (`UserProfile.tsx`)
+- **Pages**: lowercase (`dashboard/page.tsx`)
+- **API Routes**: lowercase (`api/users/route.ts`)
+- **Utilities**: camelCase (`userService.ts`)
+- **Types**: PascalCase (`User.types.ts`)
+
+### Import/Export Patterns
+```tsx
+// Prefer named exports for utilities
+export const formatDate = (date: Date) => { /* ... */ };
+
+// Use default exports for components
+export default function UserProfile() { /* ... */ }
+
+// Group imports logically
+import React from 'react';
+import { NextRequest, NextResponse } from 'next/server';
+import { auth } from '@/lib/firebaseClient';
+import { Button } from '@/Components/ui/button';
+```
+
+### Type Definitions
+```tsx
+// Define interfaces for data structures
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: 'admin' | 'user' | 'moderator';
+  createdAt: Date;
+}
+
+// Use type unions for specific values
+type Status = 'active' | 'inactive' | 'pending';
+
+// Generic types for reusable components
+interface ApiResponse<T> {
+  data: T;
+  error?: string;
+  success: boolean;
+}
+```
+
+### Component Patterns
+```tsx
+// Use proper TypeScript for React components
+'use client';
+import { useState, useEffect } from 'react';
+
+interface UserListProps {
+  users: User[];
+  onUserSelect: (user: User) => void;
+  loading?: boolean;
+}
+
+export default function UserList({ users, onUserSelect, loading = false }: UserListProps) {
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+
+  const handleUserClick = (user: User) => {
+    setSelectedUser(user);
+    onUserSelect(user);
+  };
+
+  if (loading) {
+    return <div>Loading users...</div>;
+  }
+
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id} onClick={() => handleUserClick(user)}>
+          {user.name}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+### API Route Patterns
+```tsx
+// Use proper typing for API routes
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function GET(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const page = parseInt(searchParams.get('page') || '1');
+    
+    // Your logic here
+    const data = await fetchData(page);
+    
+    return NextResponse.json({ data });
+  } catch (error) {
+    console.error('API Error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' }, 
+      { status: 500 }
+    );
+  }
+}
+```
+
+## 🎨 Styling Standards
+
+### Tailwind CSS Usage
+```tsx
+// Use consistent spacing
+<div className="p-6 m-4 space-y-4">
+
+// Responsive design
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+// Dark theme colors
+<div className="bg-[#0D1117] text-white">
+
+// Use CSS variables for theming
+<div className="bg-background text-foreground">
+```
+
+### Component Styling
+```tsx
+// Extract complex styles to CSS classes
+<div className="hero-section">
+  <h1 className="hero-title">Welcome</h1>
+</div>
+
+// Use conditional classes
+<button className={`btn ${isActive ? 'btn-active' : 'btn-inactive'}`}>
+```
+
+## 🔧 Error Handling
+
+### API Error Handling
+```tsx
+try {
+  const response = await fetch('/api/users');
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = await response.json();
+  return data;
+} catch (error) {
+  console.error('Error fetching users:', error);
+  throw error;
+}
+```
+
+### Component Error Boundaries
+```tsx
+'use client';
+import { ErrorBoundary } from 'react-error-boundary';
+
+function ErrorFallback({ error }: { error: Error }) {
+  return (
+    <div className="error-container">
+      <h2>Something went wrong:</h2>
+      <pre>{error.message}</pre>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <YourComponent />
+    </ErrorBoundary>
+  );
+}
+```
+
+## 🚀 Performance Best Practices
+
+### React Optimization
+```tsx
+// Use React.memo for expensive components
+const ExpensiveComponent = React.memo(({ data }: { data: any[] }) => {
+  return <div>{/* render logic */}</div>;
+});
+
+// Use useMemo for expensive calculations
+const expensiveValue = useMemo(() => {
+  return heavyCalculation(data);
+}, [data]);
+
+// Use useCallback for event handlers
+const handleClick = useCallback((id: string) => {
+  onItemClick(id);
+}, [onItemClick]);
+```
+
+### Next.js Optimization
+```tsx
+// Use dynamic imports for heavy components
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <div>Loading...</div>,
+  ssr: false, // Disable SSR if needed
+});
+
+// Use Next.js Image component
+import Image from 'next/image';
+
+<Image
+  src="/images/hero.jpg"
+  alt="Hero image"
+  width={1920}
+  height={1080}
+  priority
+  placeholder="blur"
+/>
+```
+
+## 📚 Documentation Standards
+
+### JSDoc Comments
+```tsx
+/**
+ * Formats a date string for display
+ * @param date - The date to format
+ * @param format - The format string (default: 'MM/DD/YYYY')
+ * @returns Formatted date string
+ */
+export const formatDate = (date: Date, format: string = 'MM/DD/YYYY'): string => {
+  // Implementation
+};
+```
+
+### Component Documentation
+```tsx
+/**
+ * UserList component displays a list of users with selection functionality
+ * 
+ * @param users - Array of user objects to display
+ * @param onUserSelect - Callback function when a user is selected
+ * @param loading - Whether the component is in loading state
+ */
+interface UserListProps {
+  users: User[];
+  onUserSelect: (user: User) => void;
+  loading?: boolean;
+}
+```

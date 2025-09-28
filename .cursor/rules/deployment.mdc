@@ -1,0 +1,179 @@
+---
+description: Deployment and production configuration
+---
+
+# Deployment Guide
+
+## 🚀 Vercel Deployment (Recommended)
+
+### Prerequisites
+1. Push code to GitHub repository
+2. Configure environment variables in Vercel dashboard
+3. Update Firebase authorized domains for production
+
+### Environment Variables for Production
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_production_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_production_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_production_project_id
+NEXT_PUBLIC_STORAGE_BUCKET=your_production_project.appspot.com
+NEXT_PUBLIC_SENDER_ID=your_production_sender_id
+NEXT_PUBLIC_APP_ID=your_production_app_id
+NEXT_PUBLIC_MEASUREMENT_ID=your_production_measurement_id
+GEMNI_API_KEY=your_production_gemini_api_key
+```
+
+### Firebase Configuration for Production
+1. **Update Authorized Domains**:
+   - Add your Vercel domain: `your-project.vercel.app`
+   - Add custom domain if applicable: `your-custom-domain.com`
+
+2. **Configure OAuth Redirect URIs**:
+   ```
+   https://your-project.vercel.app/api/auth/callback/google
+   https://your-custom-domain.com/api/auth/callback/google
+   ```
+
+3. **Environment-Specific Firebase Projects**:
+   - Development: `your-project-dev`
+   - Staging: `your-project-staging`
+   - Production: `your-project-prod`
+
+## 🔒 Security Configuration
+
+### Firebase Security Rules
+```javascript
+// firestore.rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /posts/{postId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && 
+        (resource.data.authorId == request.auth.uid || 
+         request.auth.token.admin == true);
+    }
+  }
+}
+```
+
+### Next.js Security Headers
+```typescript
+// next.config.ts
+const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
+        ],
+      },
+    ];
+  },
+};
+```
+
+## 🐳 Docker Deployment
+
+### Dockerfile
+```dockerfile
+FROM node:18-alpine AS base
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production
+
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN npm run build
+
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV production
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+COPY --from=builder /app/public ./public
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+USER nextjs
+EXPOSE 3000
+ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+CMD ["node", "server.js"]
+```
+
+## 📊 Monitoring & Analytics
+
+### Vercel Analytics
+```bash
+npm install @vercel/analytics
+```
+
+```tsx
+// src/app/layout.tsx
+import { Analytics } from '@vercel/analytics/react';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
+```
+
+## 🚨 Common Deployment Issues
+
+### Firebase CORS Errors
+- **Solution**: Add your production domain to Firebase Auth authorized domains
+- **Check**: Verify API keys match your Firebase project
+
+### Build Failures
+- **Check**: Node.js version compatibility
+- **Verify**: All dependencies are installed
+- **Review**: Build logs for specific errors
+
+### Environment Variable Issues
+- **Ensure**: All required variables are set
+- **Check**: Variable names match exactly
+- **Verify**: No extra spaces or quotes
+
+## 🔧 Performance Optimization
+
+### Image Optimization
+```tsx
+import Image from 'next/image';
+
+<Image
+  src="/images/hero.jpg"
+  alt="Hero image"
+  width={1920}
+  height={1080}
+  priority
+  placeholder="blur"
+/>
+```
+
+### Code Splitting
+```tsx
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <p>Loading...</p>,
+});
+```

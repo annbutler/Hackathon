@@ -38,33 +38,25 @@ const Navigation = () => {
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-xl">
          <h1>
-          <Link href="/" className="hover:text-gray-300 transition-colors"> MVP Starter Kit</Link>
+          <Link href="/" className="hover:text-gray-300 transition-colors"> Chicago Wards</Link>
           </h1>
         </div>
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
           <a 
-          onClick={() => { router.push('signup');}}
+          onClick={() => { router.push('/');}}
           className="text-white hover:text-gray-300 cursor-pointer transition-colors">
-            Sign up
+            Find Your Ward
+          </a>
+          <a 
+          onClick={() => { router.push('/dashboard');}}
+           className="text-white cursor-pointer hover:text-gray-300 transition-colors">
+            My Requests
           </a>
           <a 
           onClick={() => { router.push('login');}}
            className="text-white cursor-pointer hover:text-gray-300 transition-colors">
             Login
-          </a>
-          <a 
-          onClick={() => { router.push('/dashboard');}}
-           className="text-white cursor-pointer hover:text-gray-300 transition-colors">
-            Dashboard
-          </a>
-          <a href="#process" className="text-white hover:text-gray-300 transition-colors">
-            Process
-          </a>
-                <a 
-                onClick={() => { router.push('/AImodel');}}
-                  className="text-white hover:cursor-pointer hover:text-gray-300 transition-colors">
-            AI
           </a>
         </div>
 
@@ -104,31 +96,22 @@ const Navigation = () => {
       >
         <div className="flex flex-col space-y-4 p-6">
           <a
-            
-            onClick={() => { router.push('signup'); closeMenu();}}
+            onClick={() => { router.push('/'); closeMenu();}}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
-            Signup
+            Find Your Ward
+          </a>
+          <a
+            onClick={() => { router.push('/dashboard'); closeMenu();}}
+            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
+          >
+            My Requests
           </a>
           <a
             onClick={() => { router.push('login'); closeMenu();}}
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
             Login
-          </a>
-          <a
-            href="#about"
-            onClick={ ()=>{router.push('/dashboard'); closeMenu();}}
-            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
-          >
-            Dashboard
-          </a>
-          <a
-            href="#process"
-            onClick={closeMenu}
-            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
-          >
-            Process
           </a>
         </div>
       </div>

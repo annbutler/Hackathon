@@ -1,0 +1,86 @@
+---
+globs: src/app/api/**/*,src/lib/*.ts
+---
+
+# API Integration Guide
+
+## 🔥 Firebase Authentication API
+
+### Current Implementation
+- [src/app/api/google/google.ts](mdc:src/app/api/google/google.ts) - Google OAuth sign-in with popup
+- [src/lib/firebaseClient.ts](mdc:src/lib/firebaseClient.ts) - Firebase client configuration
+
+### Usage Pattern
+```tsx
+import { signInWithGooglePopup } from "@/app/api/google/google";
+
+const handleGoogleLogin = async () => {
+  const signedInUser = await signInWithGooglePopup();
+  if (signedInUser) {
+    // Handle successful login
+  }
+};
+```
+
+## 🤖 Google Gemini AI API
+
+### Current Implementation
+- [src/app/api/generate/route.ts](mdc:src/app/api/generate/route.ts) - AI content generation endpoint
+
+### Usage Pattern
+```tsx
+const response = await fetch('/api/generate', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ prompt }),
+});
+const data = await response.json();
+```
+
+## 🌐 API Route Patterns
+
+### Creating New API Endpoints
+- Place API routes in `src/app/api/[endpoint]/route.ts`
+- Export HTTP methods: `GET`, `POST`, `PUT`, `DELETE`
+- Use `NextRequest` and `NextResponse` for type safety
+
+### Authentication Middleware
+```tsx
+const token = req.headers.get("authorization")?.replace("Bearer ", "");
+if (!token) {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+}
+```
+
+### Error Handling
+- Always handle errors gracefully
+- Return consistent error response format
+- Log errors for debugging
+- Provide meaningful error messages
+
+## 🔧 API Client Utilities
+
+### Reusable API Client Pattern
+```tsx
+class ApiClient {
+  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    const response = await fetch(`/api${endpoint}`, {
+      headers: { 'Content-Type': 'application/json', ...options.headers },
+      ...options,
+    });
+    
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.statusText}`);
+    }
+    
+    return response.json();
+  }
+}
+```
+
+## 🚀 Best Practices
+
+- **Security**: Validate all input data, implement proper authentication
+- **Performance**: Implement caching, use pagination for large datasets
+- **Error Handling**: Always handle API errors gracefully
+- **Testing**: Write unit tests for API functions, test error scenarios

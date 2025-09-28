@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+---
+
+# Project Structure Guide
+
+This is a Next.js 15 Starter Kit with TypeScript, Firebase Authentication, Google Gemini AI, and Shadcn/UI components.
+
+## 📁 Directory Structure
+
+The main entry point is [src/app/page.tsx](mdc:src/app/page.tsx), which loads the home page layout from [src/app/layout.tsx](mdc:src/app/layout.tsx).
+
+### Key Directories:
+
+- **`src/app/`** - Next.js App Router with pages and API routes
+  - [src/app/api/](mdc:src/app/api/) - API endpoints (generate, google auth)
+  - [src/app/dashboard/](mdc:src/app/dashboard/) - Admin dashboard page
+  - [src/app/login/](mdc:src/app/login/) - Authentication pages
+  - [src/app/signup/](mdc:src/app/signup/) - User registration
+  - [src/app/AImodel/](mdc:src/app/AImodel/) - AI model interface
+
+- **`src/Components/`** - React components organized by functionality
+  - [src/Components/mvp-blocks/](mdc:src/Components/mvp-blocks/) - Pre-built MVP components (login, signup, hero)
+  - [src/Components/layouts/](mdc:src/Components/layouts/) - Navigation, footer, process components
+  - [src/Components/ui/](mdc:src/Components/ui/) - Shadcn/UI components
+  - [src/Components/Gemini/](mdc:src/Components/Gemini/) - AI-specific components
+
+- **`src/lib/`** - Utility libraries
+  - [src/lib/firebase.ts](mdc:src/lib/firebase.ts) - Firebase configuration
+  - [src/lib/firebaseClient.ts](mdc:src/lib/firebaseClient.ts) - Firebase client setup
+  - [src/lib/utils.ts](mdc:src/lib/utils.ts) - General utilities
+
+- **`public/data/`** - Mock data files
+  - [public/data/data.json](mdc:public/data/data.json) - Main mock data for development
+
+## 🔧 Configuration Files
+
+- [components.json](mdc:components.json) - Shadcn/UI configuration
+- [next.config.ts](mdc:next.config.ts) - Next.js configuration
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript configuration
+- [tailwind.config.js](mdc:tailwind.config.js) - Tailwind CSS configuration
+- [example.env](mdc:example.env) - Environment variables template
+
+## 📦 Key Dependencies
+
+- **Next.js 15** with App Router and Turbopack
+- **Firebase** for authentication and backend services
+- **Google Gemini AI** for AI content generation
+- **Shadcn/UI** and **Radix UI** for components
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+
+## 🎯 Development Patterns
+
+- Use **App Router** pattern for pages and API routes
+- Components in `src/Components/` organized by feature/functionality
+- API routes in `src/app/api/` following RESTful patterns
+- Environment variables in `.env.local` (never commit to Git)
+- TypeScript for type safety throughout the codebase

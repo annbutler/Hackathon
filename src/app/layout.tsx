@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
+import Navigation from "@/Components/layouts/navigation";
 
 const inter = Inter({
   subsets: ['latin'], // include characters you need
@@ -10,8 +11,8 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "Starter Kit",
-  description: "The Next Generation of MVP Starters",
+  title: "Chicago Wards - Find Your Ward & Connect with Your Alderman",
+  description: "Connect with your Chicago ward, alderman, and local community. Submit requests, view events, and stay informed about local government.",
   icons: {
     icon: "/favicon.png",
   },
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <Navigation />
         {children}
       </body>
     </html>
