@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Ward } from '@/lib/types';
+import { Ward, WardEvent } from '@/lib/types';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card';
 import { Button } from '@/Components/ui/button';
 import { Badge } from '@/Components/ui/badge';
@@ -13,7 +14,6 @@ import {
   MessageSquare,
   Download
 } from 'lucide-react';
-import Link from 'next/link';
 import RequestForm from './RequestForm';
 import AdvertisementSection from '@/Components/ads/AdvertisementSection';
 
@@ -24,7 +24,7 @@ interface WardOverviewProps {
 export default function WardOverview({ ward }: WardOverviewProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'alderman' | 'events' | 'requests'>('overview');
 
-  const addToCalendar = (event: any) => {
+  const addToCalendar = (event: WardEvent) => {
     const startDate = new Date(event.date);
     const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // 2 hours later
     
@@ -52,7 +52,7 @@ export default function WardOverview({ ward }: WardOverviewProps) {
           <Button
             key={id}
             variant={activeTab === id ? 'default' : 'outline'}
-            onClick={() => setActiveTab(id as any)}
+            onClick={() => setActiveTab(id as 'overview' | 'alderman' | 'events' | 'requests')}
             className="flex items-center gap-2"
           >
             <Icon className="w-4 h-4" />
@@ -131,9 +131,11 @@ export default function WardOverview({ ward }: WardOverviewProps) {
               <div className="flex flex-col md:flex-row gap-6">
                 {ward.alderman.image && (
                   <div className="flex-shrink-0">
-                    <img 
+                    <Image 
                       src={ward.alderman.image} 
                       alt={`${ward.alderman.name}, Alderman of ${ward.name}`}
+                      width={192}
+                      height={192}
                       className="w-48 h-48 rounded-lg object-cover border-2 border-gray-600"
                     />
                   </div>

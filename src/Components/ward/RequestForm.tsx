@@ -21,6 +21,19 @@ interface RequestFormProps {
   aldermanName: string;
 }
 
+interface SubmittedRequest {
+  id: string;
+  type: string;
+  title: string;
+  description: string;
+  wardId: number;
+  wardName: string;
+  aldermanName: string;
+  status: string;
+  createdAt: string;
+  estimatedResponseTime: string;
+}
+
 export default function RequestForm({ wardId, wardName, aldermanName }: RequestFormProps) {
   const [formData, setFormData] = useState({
     type: '',
@@ -29,7 +42,7 @@ export default function RequestForm({ wardId, wardName, aldermanName }: RequestF
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
-  const [submittedRequest, setSubmittedRequest] = useState<any>(null);
+  const [submittedRequest, setSubmittedRequest] = useState<SubmittedRequest | null>(null);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));

@@ -4,7 +4,7 @@ import { Advertisement } from '@/lib/types';
 import { getRandomAds } from '@/lib/adData';
 import AdvertisementCard from './AdvertisementCard';
 import { Badge } from '@/Components/ui/badge';
-import { Building2, Star } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 interface AdvertisementSectionProps {
   title?: string;

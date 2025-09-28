@@ -335,20 +335,12 @@ export default function MyRequests() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-4 border-t border-gray-600">
+                <div className="flex justify-center pt-4 border-t border-gray-600">
                   <Button 
                     onClick={closeModal}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                    className="bg-blue-600 hover:bg-blue-700 px-8"
                   >
                     Close
-                  </Button>
-                  <Button 
-                    onClick={() => window.print()}
-                    variant="outline"
-                    className="flex-1"
-                  >
-                    <FileText className="w-4 h-4 mr-2" />
-                    Print Details
                   </Button>
                 </div>
               </div>

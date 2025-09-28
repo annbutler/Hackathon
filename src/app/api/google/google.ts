@@ -8,6 +8,11 @@ import { GoogleAuthProvider
     import { auth } from "../../../lib/firebaseClient";
 
 export async function signInWithGooglePopup(): Promise<{ user: User, idToken: string } | null> {
+  if (!auth) {
+    console.error('Firebase auth is not initialized');
+    return null;
+  }
+
   const provider = new GoogleAuthProvider();
 
   try {
