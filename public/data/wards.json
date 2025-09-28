@@ -27,14 +27,14 @@
         {
           "id": 1,
           "title": "Ward 1 Community Meeting",
-          "date": "2025-03-15T18:00:00Z",
+          "date": "2025-11-15T18:00:00Z",
           "location": "Wicker Park Library",
           "description": "Monthly community meeting to discuss local issues and upcoming projects."
         },
         {
           "id": 2,
           "title": "Affordable Housing Forum",
-          "date": "2025-03-22T19:00:00Z",
+          "date": "2025-11-22T19:00:00Z",
           "location": "Ukrainian Village Community Center",
           "description": "Discussion on new affordable housing initiatives in the ward."
         }
@@ -67,7 +67,7 @@
         {
           "id": 3,
           "title": "Public Safety Town Hall",
-          "date": "2025-04-18T18:30:00Z",
+          "date": "2025-11-28T18:30:00Z",
           "location": "Lincoln Park Community Center",
           "description": "Community discussion on public safety initiatives and police-community relations."
         }
@@ -100,7 +100,7 @@
         {
           "id": 4,
           "title": "Small Business Workshop",
-          "date": "2025-05-25T10:00:00Z",
+          "date": "2025-12-08T10:00:00Z",
           "location": "Bronzeville Community Center",
           "description": "Workshop for local small business owners on city resources and permits."
         }
@@ -133,7 +133,7 @@
         {
           "id": 5,
           "title": "Education Forum",
-          "date": "2025-06-28T18:00:00Z",
+          "date": "2025-12-15T18:00:00Z",
           "location": "Hyde Park Academy",
           "description": "Community discussion on local education initiatives and school improvements."
         }
@@ -166,7 +166,7 @@
         {
           "id": 6,
           "title": "Community Development Meeting",
-          "date": "2025-07-05T19:00:00Z",
+          "date": "2025-12-22T19:00:00Z",
           "location": "South Shore Cultural Center",
           "description": "Discussion on upcoming community development projects and neighborhood improvements."
         }
@@ -199,7 +199,7 @@
         {
           "id": 7,
           "title": "Englewood Economic Summit",
-          "date": "2025-08-12T18:30:00Z",
+          "date": "2025-11-05T18:30:00Z",
           "location": "Englewood Community Center",
           "description": "Community discussion on economic development opportunities and business growth."
         }
@@ -232,7 +232,7 @@
         {
           "id": 8,
           "title": "Infrastructure Town Hall",
-          "date": "2025-09-18T19:00:00Z",
+          "date": "2025-11-12T19:00:00Z",
           "location": "South Chicago Library",
           "description": "Public meeting to discuss upcoming infrastructure projects and improvements."
         }
@@ -265,7 +265,7 @@
         {
           "id": 9,
           "title": "Chatham Business Forum",
-          "date": "2025-10-05T18:00:00Z",
+          "date": "2025-11-19T18:00:00Z",
           "location": "Chatham Community Center",
           "description": "Networking event for local businesses and discussion on economic opportunities."
         }
@@ -298,7 +298,7 @@
         {
           "id": 10,
           "title": "Roseland Job Fair",
-          "date": "2025-11-15T10:00:00Z",
+          "date": "2025-12-05T10:00:00Z",
           "location": "Roseland Community Center",
           "description": "Job fair connecting residents with local employment opportunities."
         }
@@ -331,7 +331,7 @@
         {
           "id": 11,
           "title": "Environmental Justice Forum",
-          "date": "2025-12-08T18:30:00Z",
+          "date": "2025-12-12T18:30:00Z",
           "location": "East Side Library",
           "description": "Community discussion on environmental issues and environmental justice initiatives."
         }
