@@ -1,142 +1,240 @@
-# 🚀 MVP Starter Kit
+# 🏛️ PoliConnect - Chicago
 
-Build your MVP in a day with this pre-configured Next.js + MVP Blocks starter kit.  
-This repo is designed for hackathons and rapid prototyping — especially for the Black CS Success Summit Hackathon.
+**Your comprehensive civic engagement hub for Chicago residents**
 
-We’ve set up all the boring stuff so you can focus on your project.
+PoliConnect is a modern web application that bridges the gap between Chicago residents and their local government. Built for the Black CS Success Summit Hackathon, this platform empowers citizens to stay informed about their ward, connect with their alderman, and actively participate in local government.
 
 ---
 
-## ✨ What’s Inside
+## ✨ What's Inside
 
-- **Next.js** – React framework for web apps
-- **TypeScript** – safer JavaScript
-- **Shadcn/UI** – modern UI component library
-- **Framer Motion** – animations made easy
-- **Prebuilt landing page template with flashy UI**
-- **API Data** – Example data in [`src/app/dashboard/data.json`](src/app/dashboard/data.json) for easy prototyping
+- **Next.js 15** – Modern React framework with App Router
+- **TypeScript** – Type-safe development
+- **Shadcn/UI** – Beautiful, accessible UI components
+- **Tailwind CSS** – Utility-first styling
+- **Real Chicago Ward Data** – Authentic alderman and ward information
+- **Request Management System** – Submit and track requests to aldermen
+- **Local Business Integration** – Chicago-based advertisements and services
+
+---
+
+## 🚀 Key Features
+
+### 🗺️ **Ward & Alderman Information**
+- **Comprehensive Ward Data**: Real Chicago ward information including demographics, boundaries, and statistics
+- **Alderman Profiles**: Detailed profiles with contact information, platforms, committee memberships, and biographies
+- **Search Functionality**: Find wards by number, alderman name, or specific issues
+- **Interactive Ward Pages**: Dedicated pages for each ward with detailed information
+
+### 📝 **Request Management System**
+- **Submit Requests**: Residents can submit requests to their alderman for various issues (infrastructure, safety, environment, housing)
+- **Request Tracking**: View and track the status of submitted requests
+- **Professional Success Messages**: Detailed confirmation and next steps after submission
+- **Request History**: Complete history of all submitted requests with status updates
+
+### 🏢 **Local Business Integration**
+- **Chicago-Based Advertisements**: Local businesses including lawn care, child care, and plumbing services
+- **Revenue Model**: Demonstrates how the platform can be monetized while serving residents
+- **Responsive Ad Design**: Professional advertisement cards with contact information and service details
+
+### 📅 **Event Management**
+- **Ward Events**: View upcoming community meetings, forums, and events
+- **Calendar Integration**: Add events directly to personal calendars (Google Calendar)
+- **Event Details**: Comprehensive event information including location, time, and description
 
 ---
 
 ## 🛠️ Getting Started
 
-### 1. Clone the Repo
-
-Open your terminal and run:
+### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/YOUR_ORG/Starter-kit.git
-cd mvp-starter-kit
+git clone https://github.com/annbutler/Hackathon.git
+cd Hackathon
 ```
 
-### 2. Install Node.js (if you don’t have it)
+### 2. Install Dependencies
 
-- Go to [nodejs.org](https://nodejs.org/)
-- Download and install the LTS version for your system
-
-### 3. Install Next.js and Dependencies
-
-In your project folder, run:
+Make sure you have Node.js installed (version 18 or higher), then run:
 
 ```sh
 npm install
-# or
-yarn install
 ```
 
-This will install Next.js and all required packages.
-
-### 4. Run the Development Server
+### 3. Run the Development Server
 
 ```sh
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see your app.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see PoliConnect.
+
+### 4. Explore the Features
+
+- **Homepage**: Search for wards and aldermen
+- **Ward Pages**: Click on any ward to see detailed information
+- **Submit Requests**: Use the request form to submit issues to aldermen
+- **My Requests**: View and track your submitted requests
+- **Local Businesses**: Browse Chicago-based service advertisements
 
 ---
 
-## 🧑‍💻 Working With Dummy Data
+## 📊 Data Structure
 
-We’ve included a sample data file at [`src/app/dashboard/data.json`](src/app/dashboard/data.json).  
-This is used to display dummy data in the dashboard and other components.
-
-**How it works:**
-- The dashboard page automatically loads data from this file.
-- You can edit `data.json` to change what appears in tables and charts.
-
-**Example:**
+### **Ward Data** (`public/data/wards.json`)
+Contains comprehensive information about Chicago wards including:
 
 ```json
-[
-  {
-    "id": 1,
-    "header": "Black Excellence in Tech",
-    "type": "Community Impact",
-    "status": "Active",
-    "target": "10,000",
-    "limit": "15,000",
-    "reviewer": "Dr. Mark Dean",
-    "description": "Supporting Black technologists in building the future of innovation",
-    "progress": 85,
-    "category": "Education",
-    "priority": "High"
-  }
-]
-```
-
----
-
-## 🏁 Next.js Basics (For Beginners)
-
-### What is Next.js?
-
-Next.js lets you build modern websites using simple building blocks called "components."  
-You don’t need to be a coding expert—just follow these steps:
-
-### How to Create a New Page
-
-1. Go to the `src/app` folder.
-2. Create a new folder (for example, `about`).
-3. Inside, create a file called `page.tsx`.
-4. Add this code:
-
-```tsx
-export default function AboutPage() {
-  return <div>About Us</div>;
+{
+  "wards": [
+    {
+      "id": 1,
+      "name": "Ward 1",
+      "alderman": {
+        "name": "Daniel La Spata",
+        "party": "Democratic",
+        "email": "daniel.laspata@cityofchicago.org",
+        "phone": "(773) 227-0100",
+        "office": "1958 N Milwaukee Ave, Chicago, IL 60647",
+        "biography": "Daniel La Spata has served as Alderman...",
+        "platforms": ["Affordable Housing Development", "Public Transportation Improvements"],
+        "committees": ["Housing and Real Estate", "Transportation and Public Way"]
+      },
+      "demographics": {
+        "population": 54000,
+        "area": "3.2 sq mi",
+        "medianIncome": "$65000"
+      },
+      "events": [
+        {
+          "id": 1,
+          "title": "Ward 1 Community Meeting",
+          "date": "2025-03-15T18:00:00Z",
+          "location": "Wicker Park Library",
+          "description": "Monthly community meeting..."
+        }
+      ]
+    }
+  ]
 }
 ```
 
-5. Visit [http://localhost:3000/about](http://localhost:3000/about) in your browser.
+### **Advertisement Data** (`public/data/advertisements.json`)
+Local Chicago business advertisements including:
 
-### How to Use the Dummy Data
+```json
+{
+  "advertisements": [
+    {
+      "id": 1,
+      "type": "lawn-care",
+      "title": "Expert Lawn Care Services",
+      "businessName": "Chicago Lawn Care Pro",
+      "phone": "(312) 555-1234",
+      "serviceArea": "All Chicago Wards",
+      "rating": 4.8,
+      "services": ["Mowing", "Trimming", "Fertilization"]
+    }
+  ]
+}
+```
 
-- The dashboard automatically pulls from `data.json`.
-- To add new data, just edit the file and save.
+### **Request Storage** (`src/lib/requestStorage.ts`)
+In-memory storage system for submitted requests with tracking capabilities.
 
-### How to Customize the UI
+---
 
-- All UI components are in [`src/Components/ui`](src/Components/ui).
-- You can change colors, text, and layout by editing these files.
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Homepage with ward search
+│   ├── ward/[wardId]/     # Dynamic ward pages
+│   ├── dashboard/         # My Requests page
+│   └── layout.tsx         # Root layout with navigation
+├── Components/            # React components
+│   ├── ward/             # Ward-related components
+│   ├── requests/         # Request management components
+│   ├── ads/              # Advertisement components
+│   ├── layouts/          # Navigation and layout components
+│   └── ui/               # Reusable UI components
+├── lib/                  # Utility functions and data management
+│   ├── types.ts          # TypeScript interfaces
+│   ├── wardData.ts       # Ward data utilities
+│   └── requestStorage.ts # Request storage system
+└── public/data/          # JSON data files
+    ├── wards.json        # Ward and alderman data
+    └── advertisements.json # Local business ads
+```
+
+## 🎨 Customization Guide
+
+### Adding New Wards
+1. Edit `public/data/wards.json`
+2. Add new ward objects with the same structure
+3. Include alderman information, demographics, and events
+
+### Modifying UI Components
+- **Ward Search**: `src/Components/ward/WardSearch.tsx`
+- **Ward Pages**: `src/Components/ward/WardOverview.tsx`
+- **Request Forms**: `src/Components/ward/RequestForm.tsx`
+- **My Requests**: `src/Components/requests/MyRequests.tsx`
+
+### Styling
+- Uses Tailwind CSS for styling
+- Dark theme with blue accent colors
+- Responsive design for mobile and desktop
 
 ---
 
 ## 📚 Useful Links
 
-- [Next.js Docs](https://nextjs.org/docs)
-- [TypeScript Docs](https://www.typescriptlang.org/docs/)
-- [Shadcn UI Docs](https://ui.shadcn.com/docs)
-- [Framer Motion Docs](https://www.framer.com/motion/)
+### **Development Resources**
+- [Next.js 15 Documentation](https://nextjs.org/docs) - App Router and server components
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) - Type safety and interfaces
+- [Shadcn/UI Components](https://ui.shadcn.com/docs) - UI component library
+- [Tailwind CSS](https://tailwindcss.com/docs) - Utility-first CSS framework
+
+### **Chicago Government Resources**
+- [City of Chicago Official Website](https://www.chicago.gov/)
+- [Chicago Ward Map](https://www.chicago.gov/city/en/about/wards.html)
+- [Chicago City Council](https://www.chicago.gov/city/en/about/council.html)
+
+### **Deployment**
+- [Vercel Deployment Guide](https://vercel.com/docs) - Deploy your app to Vercel
+- [Deployment Tutorial](https://docs.google.com/presentation/d/1CqtNVXFvsKRtkE7Bi5KmnTfgCEeaGEss3ALGEOFnmuk/edit?usp=sharing) - Step-by-step deployment guide
+
+---
+
+## 🎯 Features Overview
+
+### **For Residents**
+- 🔍 **Find Your Ward**: Search by ward number, alderman name, or issues
+- 📋 **Submit Requests**: Report issues and request services from your alderman
+- 📊 **Track Requests**: Monitor the status of your submitted requests
+- 📅 **Stay Informed**: View upcoming ward events and community meetings
+- 🏢 **Support Local**: Discover Chicago-based businesses and services
+
+### **For Aldermen**
+- 📈 **Request Management**: Track and respond to resident requests
+- 📊 **Community Engagement**: Share events and important information
+- 🏛️ **Transparency**: Provide clear contact information and platforms
+
+### **For Local Businesses**
+- 📢 **Targeted Advertising**: Reach residents in specific wards
+- 💼 **Service Discovery**: Connect with potential customers
+- 🌟 **Community Support**: Contribute to local civic engagement
 
 ---
 
 ## 🏆 Credits
 
-&copy; {currentYear} Built for the Black CS Success Summit Hackathon 🚀
+**PoliConnect** - Built for the Black CS Success Summit Hackathon 2025 🚀
+
+**Mission**: Bridging the gap between Chicago residents and local government through technology and civic engagement.
 
 ---
-## Deploying on Vercel
-[Google Slide demonstrating it](https://docs.google.com/presentation/d/1CqtNVXFvsKRtkE7Bi5KmnTfgCEeaGEss3ALGEOFnmuk/edit?usp=sharing)
----
+
 **Need help?**  
-Just open an issue or ask in your team chat!
+Open an issue on GitHub or reach out to the development team!
