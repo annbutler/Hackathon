@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 
-export const metadata: Metadata = {
-  title: "PoliTalk - Your Ward Information Hub",
-  description: "Get informed about your Chicago ward, connect with your alderman, and stay engaged with local government. Find ward information, submit requests, and discover local events.",
-  icons: {
-    icon: "/favicon.png",
-  },
-};
+    export const metadata: Metadata = {
+      title: "PoliConnect - Your Ward Information Hub",
+      description: "Get informed about your Chicago ward, connect with your alderman, and stay engaged with local government. Find ward information, submit requests, and discover local events.",
+      icons: {
+        icon: "/favicon.png",
+      },
+    };
 
 export default function RootLayout({
   children,

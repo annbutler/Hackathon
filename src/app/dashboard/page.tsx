@@ -1,9 +1,9 @@
-import AdminDashboard from "@/Components/mvpblocks"
+import MyRequests from "@/Components/requests/MyRequests"
 
 const dashboardpage = () => {
     return(
         <div>
-            <AdminDashboard/>
+            <MyRequests/>
         </div>
     )
 }

@@ -38,7 +38,7 @@ const Navigation = () => {
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-xl">
           <h1>
-            <Link href="/" className="hover:text-gray-300 transition-colors"> PoliTalk</Link>
+            <Link href="/" className="hover:text-gray-300 transition-colors"> PoliConnect</Link>
           </h1>
         </div>
         {/* Desktop Menu */}
@@ -52,11 +52,6 @@ const Navigation = () => {
           onClick={() => { router.push('/dashboard');}}
            className="text-white cursor-pointer hover:text-gray-300 transition-colors">
             My Requests
-          </a>
-          <a 
-          onClick={() => { router.push('login');}}
-           className="text-white cursor-pointer hover:text-gray-300 transition-colors">
-            Login
           </a>
         </div>
 
@@ -106,12 +101,6 @@ const Navigation = () => {
             className="text-white hover:text-gray-300 transition-colors text-lg py-2"
           >
             My Requests
-          </a>
-          <a
-            onClick={() => { router.push('login'); closeMenu();}}
-            className="text-white hover:text-gray-300 transition-colors text-lg py-2"
-          >
-            Login
           </a>
         </div>
       </div>

@@ -23,22 +23,22 @@
         "area": "3.2 sq mi",
         "medianIncome": "$65000"
       },
-        "events": [
-          {
-            "id": 1,
-            "title": "Ward 1 Community Meeting",
-            "date": "2025-03-15T18:00:00Z",
-            "location": "Wicker Park Library",
-            "description": "Monthly community meeting to discuss local issues and upcoming projects."
-          },
-          {
-            "id": 2,
-            "title": "Affordable Housing Forum",
-            "date": "2025-03-22T19:00:00Z",
-            "location": "Ukrainian Village Community Center",
-            "description": "Discussion on new affordable housing initiatives in the ward."
-          }
-        ]
+      "events": [
+        {
+          "id": 1,
+          "title": "Ward 1 Community Meeting",
+          "date": "2025-03-15T18:00:00Z",
+          "location": "Wicker Park Library",
+          "description": "Monthly community meeting to discuss local issues and upcoming projects."
+        },
+        {
+          "id": 2,
+          "title": "Affordable Housing Forum",
+          "date": "2025-03-22T19:00:00Z",
+          "location": "Ukrainian Village Community Center",
+          "description": "Discussion on new affordable housing initiatives in the ward."
+        }
+      ]
     },
     {
       "id": 2,
@@ -169,6 +169,171 @@
           "date": "2025-07-05T19:00:00Z",
           "location": "South Shore Cultural Center",
           "description": "Discussion on upcoming community development projects and neighborhood improvements."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ward 6",
+      "alderman": {
+        "name": "William Hall",
+        "party": "Democratic",
+        "email": "william.hall@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "2501 S State St, Chicago, IL 60616",
+        "biography": "William Hall has served the 6th Ward since 2019. He represents Englewood and surrounding areas. He focuses on economic development, public safety, and community revitalization.",
+        "platforms": [
+          "Economic Development",
+          "Public Safety",
+          "Community Revitalization",
+          "Youth Development"
+        ],
+        "committees": ["Economic, Capital and Technology Development", "Public Safety"]
+      },
+      "demographics": {
+        "population": 45000,
+        "area": "3.8 sq mi",
+        "medianIncome": "$38000"
+      },
+      "events": [
+        {
+          "id": 7,
+          "title": "Englewood Economic Summit",
+          "date": "2025-08-12T18:30:00Z",
+          "location": "Englewood Community Center",
+          "description": "Community discussion on economic development opportunities and business growth."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Ward 7",
+      "alderman": {
+        "name": "Gregory Mitchell",
+        "party": "Democratic",
+        "email": "gregory.mitchell@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "2249 E 95th St, Chicago, IL 60617",
+        "biography": "Gregory Mitchell has served the 7th Ward since 2015. He represents South Chicago and surrounding areas. He focuses on infrastructure improvements, public safety, and community engagement.",
+        "platforms": [
+          "Infrastructure Improvements",
+          "Public Safety",
+          "Community Engagement",
+          "Environmental Justice"
+        ],
+        "committees": ["Transportation and Public Way", "Environmental Protection and Energy"]
+      },
+      "demographics": {
+        "population": 48000,
+        "area": "4.1 sq mi",
+        "medianIncome": "$41000"
+      },
+      "events": [
+        {
+          "id": 8,
+          "title": "Infrastructure Town Hall",
+          "date": "2025-09-18T19:00:00Z",
+          "location": "South Chicago Library",
+          "description": "Public meeting to discuss upcoming infrastructure projects and improvements."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Ward 8",
+      "alderman": {
+        "name": "Michelle Harris",
+        "party": "Democratic",
+        "email": "michelle.harris@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "8534 S Cottage Grove Ave, Chicago, IL 60619",
+        "biography": "Michelle Harris has served the 8th Ward since 2006. She represents Chatham and surrounding areas. She focuses on economic development, public safety, and community services.",
+        "platforms": [
+          "Economic Development",
+          "Public Safety",
+          "Community Services",
+          "Senior Programs"
+        ],
+        "committees": ["Economic, Capital and Technology Development", "Health and Human Relations"]
+      },
+      "demographics": {
+        "population": 52000,
+        "area": "3.9 sq mi",
+        "medianIncome": "$45000"
+      },
+      "events": [
+        {
+          "id": 9,
+          "title": "Chatham Business Forum",
+          "date": "2025-10-05T18:00:00Z",
+          "location": "Chatham Community Center",
+          "description": "Networking event for local businesses and discussion on economic opportunities."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ward 9",
+      "alderman": {
+        "name": "Anthony Beale",
+        "party": "Democratic",
+        "email": "anthony.beale@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "34 E 112th Pl, Chicago, IL 60628",
+        "biography": "Anthony Beale has served the 9th Ward since 1999. He represents Roseland and surrounding areas. He focuses on economic development, public safety, and community revitalization.",
+        "platforms": [
+          "Economic Development",
+          "Public Safety",
+          "Community Revitalization",
+          "Job Creation"
+        ],
+        "committees": ["Economic, Capital and Technology Development", "Public Safety"]
+      },
+      "demographics": {
+        "population": 46000,
+        "area": "4.3 sq mi",
+        "medianIncome": "$39000"
+      },
+      "events": [
+        {
+          "id": 10,
+          "title": "Roseland Job Fair",
+          "date": "2025-11-15T10:00:00Z",
+          "location": "Roseland Community Center",
+          "description": "Job fair connecting residents with local employment opportunities."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Ward 10",
+      "alderman": {
+        "name": "Susan Sadlowski Garza",
+        "party": "Democratic",
+        "email": "susan.garza@cityofchicago.org",
+        "phone": "(773) 536-8103",
+        "office": "10500 S Ewing Ave, Chicago, IL 60617",
+        "biography": "Susan Sadlowski Garza has served the 10th Ward since 2015. She represents East Side and surrounding areas. She focuses on environmental justice, public safety, and community development.",
+        "platforms": [
+          "Environmental Justice",
+          "Public Safety",
+          "Community Development",
+          "Labor Rights"
+        ],
+        "committees": ["Environmental Protection and Energy", "Workers' Rights"]
+      },
+      "demographics": {
+        "population": 44000,
+        "area": "4.0 sq mi",
+        "medianIncome": "$43000"
+      },
+      "events": [
+        {
+          "id": 11,
+          "title": "Environmental Justice Forum",
+          "date": "2025-12-08T18:30:00Z",
+          "location": "East Side Library",
+          "description": "Community discussion on environmental issues and environmental justice initiatives."
         }
       ]
     }
