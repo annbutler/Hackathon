@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp, FirebaseApp } from "firebase/app";
+import { getAnalytics, Analytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,6 +15,13 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
 };
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
+// Initialize Firebase only in browser environment
+let app: FirebaseApp | null = null;
+let analytics: Analytics | null = null;
+
+if (typeof window !== 'undefined') {
+  app = initializeApp(firebaseConfig);
+  analytics = getAnalytics(app);
+}
+
+export { app, analytics };

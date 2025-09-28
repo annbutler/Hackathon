@@ -21,6 +21,19 @@ interface RequestFormProps {
   aldermanName: string;
 }
 
+interface SubmittedRequest {
+  id: string;
+  type: string;
+  title: string;
+  description: string;
+  wardId: number;
+  wardName: string;
+  aldermanName: string;
+  status: string;
+  createdAt: string;
+  estimatedResponseTime: string;
+}
+
 export default function RequestForm({ wardId, wardName, aldermanName }: RequestFormProps) {
   const [formData, setFormData] = useState({
     type: '',
@@ -29,7 +42,7 @@ export default function RequestForm({ wardId, wardName, aldermanName }: RequestF
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'submitted' | 'error'>('idle');
-  const [submittedRequest, setSubmittedRequest] = useState<any>(null);
+  const [submittedRequest, setSubmittedRequest] = useState<SubmittedRequest | null>(null);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -162,7 +175,7 @@ export default function RequestForm({ wardId, wardName, aldermanName }: RequestF
                 </div>
                 <div>
                   <p className="text-white font-medium">Review Process</p>
-                  <p className="text-gray-400 text-sm">The alderman's office will review your request within {submittedRequest.estimatedResponseTime}.</p>
+                  <p className="text-gray-400 text-sm">The alderman&apos;s office will review your request within {submittedRequest.estimatedResponseTime}.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -171,7 +184,7 @@ export default function RequestForm({ wardId, wardName, aldermanName }: RequestF
                 </div>
                 <div>
                   <p className="text-white font-medium">Response & Updates</p>
-                  <p className="text-gray-400 text-sm">You'll receive email updates on the progress and any actions taken.</p>
+                  <p className="text-gray-400 text-sm">You&apos;ll receive email updates on the progress and any actions taken.</p>
                 </div>
               </div>
             </div>
@@ -189,7 +202,7 @@ export default function RequestForm({ wardId, wardName, aldermanName }: RequestF
           <CardContent>
             <div className="bg-gray-900/50 rounded-lg p-4">
               <p className="text-gray-300 text-sm mb-3">
-                Questions about your request? Contact the alderman's office directly:
+                Questions about your request? Contact the alderman&apos;s office directly:
               </p>
               <div className="space-y-2">
                 <p className="text-white">

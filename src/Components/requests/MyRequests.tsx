@@ -157,7 +157,7 @@ export default function MyRequests() {
               <FileText className="w-16 h-16 text-gray-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">No Requests Yet</h3>
               <p className="text-gray-400 mb-6">
-                You haven't submitted any requests yet. Start by finding your ward and submitting a request.
+                You haven&apos;t submitted any requests yet. Start by finding your ward and submitting a request.
               </p>
               <Button 
                 onClick={() => window.location.href = '/'}
@@ -329,26 +329,18 @@ export default function MyRequests() {
                       <span className="font-medium">Reference ID:</span> {selectedRequest.id}
                     </p>
                     <p className="text-gray-400 text-xs mt-1">
-                      Include this ID when contacting the alderman's office about this request.
+                      Include this ID when contacting the alderman&apos;s office about this request.
                     </p>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-4 border-t border-gray-600">
+                <div className="flex justify-center pt-4 border-t border-gray-600">
                   <Button 
                     onClick={closeModal}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                    className="bg-blue-600 hover:bg-blue-700 px-8"
                   >
                     Close
-                  </Button>
-                  <Button 
-                    onClick={() => window.print()}
-                    variant="outline"
-                    className="flex-1"
-                  >
-                    <FileText className="w-4 h-4 mr-2" />
-                    Print Details
                   </Button>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Ward, searchWards } from '@/lib/wardData';
+import { Ward } from '@/lib/types';
+import { searchWards } from '@/lib/wardData';
 import { Input } from '@/Components/ui/input';
 import { Button } from '@/Components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card';
@@ -15,7 +16,7 @@ export default function WardSearch() {
   const [hasSearched, setHasSearched] = useState(false);
   const router = useRouter();
 
-  const handleSearch = async (searchQuery: string = query) => {
+  const handleSearch = useCallback(async (searchQuery: string = query) => {
     if (!searchQuery.trim()) {
       setResults([]);
       setHasSearched(false);
@@ -32,7 +33,7 @@ export default function WardSearch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [query]);
 
   // Debounced search effect
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function WardSearch() {
     }, 300); // 300ms delay
 
     return () => clearTimeout(timeoutId);
-  }, [query]);
+  }, [query, handleSearch]);
 
   const handleWardClick = (wardId: number) => {
     router.push(`/ward/${wardId}`);
@@ -144,7 +145,7 @@ export default function WardSearch() {
       {!loading && hasSearched && results.length === 0 && (
         <div className="text-center text-gray-400 py-12">
           <Search className="w-12 h-12 mx-auto mb-4 text-gray-600" />
-          <p className="text-lg">No wards found matching "{query}"</p>
+              <p className="text-lg">No wards found matching &quot;{query}&quot;</p>
           <p className="text-sm mt-2">Try searching by ward number (1-50) or alderman name</p>
         </div>
       )}
