@@ -157,7 +157,7 @@ export default function MyRequests() {
               <FileText className="w-16 h-16 text-gray-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">No Requests Yet</h3>
               <p className="text-gray-400 mb-6">
-                You haven't submitted any requests yet. Start by finding your ward and submitting a request.
+                You haven&apos;t submitted any requests yet. Start by finding your ward and submitting a request.
               </p>
               <Button 
                 onClick={() => window.location.href = '/'}
@@ -329,7 +329,7 @@ export default function MyRequests() {
                       <span className="font-medium">Reference ID:</span> {selectedRequest.id}
                     </p>
                     <p className="text-gray-400 text-xs mt-1">
-                      Include this ID when contacting the alderman's office about this request.
+                      Include this ID when contacting the alderman&apos;s office about this request.
                     </p>
                   </div>
                 </div>
